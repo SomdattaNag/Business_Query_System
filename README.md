@@ -165,9 +165,11 @@ The graph is rendered using **vis.js**, providing full interactivity for users t
 
 The graph visually represents the complete business flow:
 
+```
 Customer → Order → Delivery → Invoice → Payment
                     ↓
                  Product
+```
 
 This visual representation helps users quickly identify:
 - **Complete flows** — Full chain from customer to payment
