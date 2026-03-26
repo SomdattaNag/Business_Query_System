@@ -31,12 +31,14 @@ python
 model="llama-3.3-70b-versatile"
 You can check Groq's deprecations page (https://console.groq.com/docs/deprecations) and their models page for the full current list. The rest of your app seems to be working fine — the Flask server is running, static files are loading, and the /api/graph-data endpoint is responding normally.
 
-EXPLAIN THIS ERROR IS THIS OK? PS C:\Users\chand\OneDrive\Desktop\Graph_based_data_Modelling> & C:/Users/chand/.virtualenvs/Hot-Food-o8kLWIrj/Scripts/python.exe c:/Users/chand/OneDrive/Desktop/Graph_based_data_Modelling/load_data.py
-==================================================
-🚀 BUSINESS GRAPH DATA LOADER
-==================================================
-✅ Successfully connected to MySQL!
-📊 Tables to load: 9
+
+EXPLAIN THIS ERROR IS THIS OK?
+```
+ PS C:\Users\chand\OneDrive\Desktop\Graph_based_data_Modelling> & C:/Users/chand/.virtualenvs/Hot-Food-o8kLWIrj/Scripts/python.exe c:/Users/chand/OneDrive/Desktop/Graph_based_data_Modelling/load_data.py
+
+BUSINESS GRAPH DATA LOADER
+
+Tables to load: 9
    - business_partners
    - products
    - sales_order_headers
@@ -96,13 +98,15 @@ Show more
 5:59 PM
 Everything loaded fine except one table. Here's the breakdown:
 
-✅ What's OK
+What's OK
 All other 8 tables loaded successfully — 932 total records made it in.
 
-❌ The Problem: billing_documents table
+The Problem: billing_documents table
 Error at line 1–5: 1054 (42S22): Unknown column 'partner_id' in 'field list'
 ✅ Loaded 0 records into billing_documents
 ⚠️  Skipped 163 records
+```
+
 What this means: Your JSONL file contains a field called partner_id, but your MySQL billing_documents table doesn't have a column named partner_id. So all 163 billing document header records were skipped — none loaded.
 
 Why this happens — likely causes:
