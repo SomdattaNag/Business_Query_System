@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Graph Query System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- vis.js for graph visualization -->
+    <script src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Business Graph Query System</h1>
+            <p>Ask questions about orders, deliveries, invoices, and payments</p>
+        </header>
+        
+        <div class="main-content">
+            <!-- Graph Panel -->
+            <div class="graph-panel">
+                <div class="graph-controls">
+                    <button onclick="resetGraph()">Reset View</button>
+                    <button onclick="togglePhysics()">Toggle Physics</button>
+                    <span id="node-count"></span>
+                </div>
+                <div id="graph-container"></div>
+            </div>
+            
+            <!-- Chat Panel -->
+            <div class="chat-panel">
+                <div class="chat-header">
+                    <h3>💬 Ask about your data</h3>
+                    <p>Natural language queries about your business data</p>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message system">
+                        👋 Hello! I can answer questions about:<br>
+                        • Orders and deliveries<br>
+                        • Invoices and payments<br>
+                        • Products and customers<br>
+                        • Broken flows (delivered but not billed, etc.)<br><br>
+                        <strong>Try asking:</strong><br>
+                        - "Which products have the most invoices?"<br>
+                        - "Show me orders that were delivered but not billed"<br>
+                        - "Trace order 740506"<br>
+                        - "What's the total payment amount?"
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="question-input" placeholder="Type your question here..." autocomplete="off">
+                    <button id="send-button">Send</button>
+                </div>
+                <div class="chat-footer">
+                    <small>System only answers questions about the business dataset</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/js/graph.js"></script>
+    <script src="/static/js/chat.js"></script>
+</body>
+</html>
