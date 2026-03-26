@@ -10,6 +10,7 @@ A graph-based data modeling and query system that transforms fragmented business
 - [Tech Stack](#tech-stack)
 - [System Architecture](#system-architecture)
 - [Query Processing Flow](#query-processing-flow)
+- [Graph Visualization](#graph-visualization)   
 - [Database Schema](#database-schema)
 - [Data Loading](#data-loading)
 - [LLM Prompting Strategy](#llm-prompting-strategy)
@@ -164,10 +165,9 @@ The graph is rendered using **vis.js**, providing full interactivity for users t
 
 The graph visually represents the complete business flow:
 
-Customer (Green) → Order (Blue) → Delivery (Purple) → Invoice (Pink) → Payment (Cyan)
-↓
-Product (Orange)
-
+Customer → Order → Delivery → Invoice → Payment
+                    ↓
+                 Product
 
 This visual representation helps users quickly identify:
 - **Complete flows** — Full chain from customer to payment
@@ -327,6 +327,7 @@ Create a `.env` file in the project root:
 ```env
 GROQ_API_KEY=your_groq_api_key_here
 DB_HOST=localhost
+DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=your_password
 DB_NAME=business_graph
@@ -335,13 +336,13 @@ DB_NAME=business_graph
 ### 4. Set up the database
 
 ```bash
-mysql -u root -p < schema/init.sql
+mysql -u root -p < schema.sql
 ```
 
 ### 5. Load sample data
 
 ```bash
-python loader.py --data-dir data/
+python load_data.py
 ```
 
 ### 6. Run the application
@@ -360,6 +361,7 @@ The application is configured for deployment on [Railway](https://railway.app). 
 
 - `GROQ_API_KEY`
 - `DB_HOST`
+- `DB_PORT`
 - `DB_USER`
 - `DB_PASSWORD`
 - `DB_NAME`
