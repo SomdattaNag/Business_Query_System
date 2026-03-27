@@ -178,7 +178,7 @@ This visual representation helps users quickly identify:
 
 
 ## Database Schema
-
+I chose MySQL for this project because it is a robust relational database that allows us to model graph-based relationships using foreign keys and joins. MySQL is the RDBMS I am most comfortable with, making it ideal for quickly building and iterating on the data model.
 ### Tables
 
 | Table | Description |
