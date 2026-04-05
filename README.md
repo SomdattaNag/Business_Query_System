@@ -356,7 +356,8 @@ flask run
 Open `http://localhost:5000` in your browser.
 
 ---
-
+## AI Session Logs
+The 5 different sessions with Claude AI are provided in .md files under the `AI_SESSION_LOGS` folder. 
 ## Deployment
 
 The application is configured for deployment on [Railway](https://railway.app). Ensure the following environment variables are set in your Railway project settings:
