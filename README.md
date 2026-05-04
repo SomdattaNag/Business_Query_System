@@ -4,6 +4,10 @@ A graph-based data modeling and query system that transforms fragmented business
 
 ---
 
+## DEMO VIDEO
+https://drive.google.com/file/d/1wxhe5bx_rldXTqOEzvfMGLTw2K44BnjO/view?usp=sharing
+
+---
 ## Table of Contents
 
 - [Features](#features)
@@ -375,6 +379,7 @@ A `Procfile` is included for Railway's build detection:
 ```
 web: gunicorn app:app
 ```
+
 
 # LIVE DEMO:
 https://web-production-8e6a8.up.railway.app/
